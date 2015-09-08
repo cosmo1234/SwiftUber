@@ -26,6 +26,10 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     let swiftUberClientId = "DCyBiqd7ngKYw7Pw4AlnSgw9JPqLIKGy"
     var prices:[UberPrice] = []
     
+    // Search Result
+    var searchText = ""
+    var searchTimer: NSTimer = NSTimer()
+    
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
@@ -68,16 +72,27 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     }
     
     // Search Results
-    
     func searchForLocation() {
+        self.searchTimer.invalidate()
+        
         if self.textField?.text == "" {
             self.tableView?.hidden = true
             self.shouldUpdateLocation = true
             return
         }
         
-        self.searchingForLocations = true
-        if let searchText = self.textField?.text as String? {
+        if let text = self.textField?.text as String? {
+            self.searchingForLocations = true
+            searchText = text
+            //self.searchTimer
+            self.searchTimer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "delayedSearch", userInfo: nil, repeats: false)
+        }
+    }
+    
+    func delayedSearch() {
+        println("search text = \(searchText) | textField: \(self.textField?.text)")
+        
+        if searchText == self.textField?.text {
             LocalSearchManager.search(searchText, region: self.mapView?.region, completion: {
                 (mapItems: [MKMapItem], error: NSError?) -> Void in
                 println("search results: \(mapItems)")
@@ -88,7 +103,6 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
                 self.tableView?.reloadData()
             })
         }
-        
     }
     
     func setTableViewHeight() {
@@ -191,14 +205,14 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         println("buttonIndex: \(buttonIndex)")
         
-        let price = self.prices[buttonIndex - 1]
-        if let ride = price.ride as UberRide? {
-            ride.uberProduct = price.uberProduct
-            self.swiftUber.openUber(ride, clientId: swiftUberClientId)
-
+        if buttonIndex > 0 {
+            let price = self.prices[buttonIndex - 1]
+            if let ride = price.ride as UberRide? {
+                ride.uberProduct = price.uberProduct
+                self.swiftUber.openUber(ride, clientId: swiftUberClientId)
+                
+            }
         }
-        
-        
     }
     
     
