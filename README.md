@@ -1,5 +1,5 @@
 # SwiftUber
-Easy, Basic Uber integration for Swift.
+##Easy Uber integration for Swift.
 
 Just started. Cocoa Pods coming soon. 
 
