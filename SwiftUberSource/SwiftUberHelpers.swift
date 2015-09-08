@@ -15,3 +15,17 @@ extension Float {
         return nf.stringFromNumber(self)!
     }
 }
+
+extension String {
+    func swiftUberURLformat() -> String {
+        var url = self.stringByReplacingOccurrencesOfString(" ", withString: "%20", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        
+        url = url.stringByReplacingOccurrencesOfString(",", withString: "%2C", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        
+        url = url.stringByReplacingOccurrencesOfString("[", withString: "%5B", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        
+        url = url.stringByReplacingOccurrencesOfString("]", withString: "%5D", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        
+        return url
+    }
+}

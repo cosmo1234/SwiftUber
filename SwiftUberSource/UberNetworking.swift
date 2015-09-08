@@ -31,7 +31,7 @@ class UberNetworking: NSObject {
         self.swiftUber = swiftUber
     }
     
-    func getProducts(location: CLLocation, completion: ((Bool?, NSError?) -> Void)?) {
+    func getAllProducts(location: CLLocation, completion: ((Bool, NSError?) -> Void)?) {
         let startLat = Float(location.coordinate.latitude)
         let startLon = Float(location.coordinate.longitude)
         
@@ -113,5 +113,78 @@ class UberNetworking: NSObject {
             // no destination
             completion?([], nil)
         }
+    }
+    
+    
+    func launchUber(ride: UberRide, clientId: String) {
+        if let url = self.createUberAppUrl(ride, clientId: clientId) as NSURL? {
+            if UIApplication.sharedApplication().canOpenURL(url) {
+                UIApplication.sharedApplication().openURL(url)
+                return
+            }
+        }
+        
+        if let webUrl = self.createUberWebUrl(ride, clientId:clientId) as NSURL? {
+            UIApplication.sharedApplication().openURL(webUrl)
+        }
+        
+    }
+    
+    func createUberAppUrl(ride: UberRide, clientId: String) -> NSURL? {
+        var urlString = "uber://?client_id=" + clientId + "&action=setPickup&pickup=my_location"
+        
+        if let productId = ride.product?.id as String? {
+            urlString += "&product_id=" + productId
+        }
+        
+        if let dropOffLat = ride.dropOffLatitude as Float? {
+            if let dropOffLong = ride.dropOffLongitude as Float? {
+                urlString += "&dropoff[latitude]=" + dropOffLat.swiftUberLocationToString() + "&dropoff[longitude]=" + dropOffLong.swiftUberLocationToString()
+            }
+        }
+        
+        if let nickname = ride.dropOffNickName as String? {
+            urlString += "&dropoff[nickname]=" + nickname
+        }
+        
+        if let formattedAddress = ride.dropOffAddress as String? {
+            urlString += "&dropoff[formatted_address]=" + formattedAddress
+        }
+        
+        return NSURL(string: urlString.swiftUberURLformat())
+    }
+    
+    func createUberWebUrl(ride: UberRide, clientId: String) -> NSURL? {
+        var urlString = "https://m.uber.com/sign-up?client_id=" + clientId
+        
+        if let pickUpLat = ride.pickupLatitude as Float? {
+            if let pickUpLon = ride.pickupLongitude as Float? {
+                urlString += "&pickup_latitude=" + pickUpLat.swiftUberLocationToString() + "&pickup_longitude=" + pickUpLon.swiftUberLocationToString()
+            }
+        }
+        
+        if let pickUpNickName = ride.pickupNickName as String? {
+            urlString += "&pickup_nickname=" + pickUpNickName
+        }
+        
+        if let pickUpAddress = ride.pickupAddress as String? {
+            urlString += "&pickup_address=" + pickUpAddress
+        }
+        
+        if let dropOffLat = ride.dropOffLatitude as Float? {
+            if let dropOffLong = ride.dropOffLongitude as Float? {
+                urlString += "&dropoff_latitude=" + dropOffLat.swiftUberLocationToString() + "&dropoff_longitude_=" + dropOffLong.swiftUberLocationToString()
+            }
+        }
+        
+        if let nickname = ride.dropOffNickName as String? {
+            urlString += "&dropoff_nickname=" + nickname
+        }
+        
+        if let formattedAddress = ride.dropOffAddress as String? {
+            urlString += "&dropoff_formatted_address=" + formattedAddress
+        }
+        
+        return NSURL(string: urlString.swiftUberURLformat())
     }
 }

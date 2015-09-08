@@ -11,35 +11,43 @@ import MapKit
 
 class SwiftUber: NSObject {
     
-    internal var products: [UberProduct] = []
+    var products: [UberProduct] = []
     
-    let serverToken: String!
+    private let serverToken: String!
     
     init(serverToken: String){
         self.serverToken = serverToken
     }
     
-    class func allProducts() {
+    func allProducts(location: CLLocation, completion: (([UberProduct], NSError?) -> Void)?) {
+        let uberNetworking = UberNetworking(serverToken: self.serverToken, swiftUber: self)
+        uberNetworking.getAllProducts(location, completion: {
+            (success: Bool, error: NSError?) -> Void in
+            completion?(self.products, error)
+        })
+    }
+    
+    func getProduct() {
         //
     }
     
-    class func getProduct() {
+    func priceEstimate(ride: UberRide, completion: (([UberPrice]?, NSError?) -> Void)?){
+        let uberNetworking = UberNetworking(serverToken: self.serverToken, swiftUber: self)
+        uberNetworking.getPriceEstimates(ride, completion: {
+            (uberPrices: [UberPrice]?, error: NSError?) -> Void in
+            completion?(uberPrices, error)
+        })
+    }
+    
+    func timeEstimate() {
         //
     }
     
-    class func priceEstimate(){
+    func promotions() {
         //
     }
     
-    class func timeEstimate() {
-        //
-    }
-    
-    class func promotions() {
-        //
-    }
-    
-    class func openUber(clientId:String){
+    func openUber(ride: UberRide, clientId:String){
         //
     }
 }
