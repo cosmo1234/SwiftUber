@@ -193,6 +193,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         
         let price = self.prices[buttonIndex - 1]
         if let ride = price.ride as UberRide? {
+            ride.uberProduct = price.uberProduct
             self.swiftUber.openUber(ride, clientId: swiftUberClientId)
 
         }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E041ABCD-8266-4ED2-8510-1EBFE100A9E9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SwiftUberDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>03823EEAA37C0D0C76B171A23DE463F155EA748C</key>
+		<string>https://github.com/sean-a-wilson/SwiftUber.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SwiftUberDemo/SwiftUberDemo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>03823EEAA37C0D0C76B171A23DE463F155EA748C</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sean-a-wilson/SwiftUber.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>03823EEAA37C0D0C76B171A23DE463F155EA748C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>03823EEAA37C0D0C76B171A23DE463F155EA748C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SwiftUber</string>
+		</dict>
+	</array>
+</dict>
+</plist>

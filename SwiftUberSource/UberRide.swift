@@ -12,7 +12,21 @@ import MapKit
 class UberRide: NSObject {
     var swiftUber: SwiftUber?
     var productId: String?
-    var product: UberProduct?
+    var  _uberProduct: UberProduct?
+    var uberProduct: UberProduct? {
+        get {
+            if let product = _uberProduct as UberProduct? {
+                return product
+            }
+            return nil
+        }
+        set (value) {
+            if let product = value as UberProduct? {
+                _uberProduct = product
+                productId = product.id
+            }
+        }
+    }
     var pickupLatitude: Float?
     var pickupLongitude: Float?
     var pickupLocation: CLLocation?

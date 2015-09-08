@@ -10,7 +10,7 @@ import UIKit
 
 class UberPrice: NSObject {
     let swiftUber: SwiftUber!
-    var product: UberProduct?
+    var uberProduct: UberProduct?
     var currencyCode: String?
     var productId: String?
     var displayName: String?
@@ -67,7 +67,7 @@ class UberPrice: NSObject {
             let filteredProducts = self.swiftUber.products.filter( { $0.id == productId })
             if filteredProducts.count == 1 {
                 let product = filteredProducts[0]
-                self.product = product
+                self.uberProduct = product
                 product.uberPrice = self
             } else {
                 // create product

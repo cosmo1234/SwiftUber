@@ -11,7 +11,7 @@ import UIKit
 class UberTime: NSObject {
     var swiftUber: SwiftUber!
     var productId:String?
-    var product: UberProduct?
+    var uberProduct: UberProduct?
     var displayName: String?
     var estimate: Int?
     
@@ -37,7 +37,7 @@ class UberTime: NSObject {
             let filteredProducts = self.swiftUber.products.filter( { $0.id == productId })
             if filteredProducts.count == 1 {
                 let product = filteredProducts[0]
-                self.product = product
+                self.uberProduct = product
                 product.uberTime = self
             } else {
                 // create product

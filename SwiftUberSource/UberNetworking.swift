@@ -134,7 +134,7 @@ class UberNetworking: NSObject {
     func createUberAppUrl(ride: UberRide, clientId: String) -> NSURL? {
         var urlString = "uber://?client_id=" + clientId + "&action=setPickup&pickup=my_location"
         
-        if let productId = ride.product?.id as String? {
+        if let productId = ride.productId as String? {
             urlString += "&product_id=" + productId
         }
         
