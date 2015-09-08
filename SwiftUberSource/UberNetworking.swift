@@ -98,6 +98,7 @@ class UberNetworking: NSObject {
                                     if let id = price["product_id"] as? String {
                                         let uberPrice = UberPrice(json: price, swiftUber: self.swiftUber)
                                         uberPrice.attachToUberProduct()
+                                        uberPrice.ride = ride
                                         uberPrices.append(uberPrice)
                                     }
                                 }

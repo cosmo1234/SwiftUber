@@ -51,6 +51,13 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
         }
     }
     
-    //func locationManager
+    public func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        if locations.count > 0 {
+            if let location = locations.first as? CLLocation {
+                self.currentLocation = location
+                NSNotificationCenter.defaultCenter().postNotificationName("locationUpdated", object: nil)
+            }
+        }
+    }
 }
 

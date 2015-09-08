@@ -48,6 +48,7 @@ class SwiftUber: NSObject {
     }
     
     func openUber(ride: UberRide, clientId:String){
-        //
+        let uberNetworking = UberNetworking(serverToken: self.serverToken, swiftUber: self)
+        uberNetworking.launchUber(ride, clientId: clientId)
     }
 }

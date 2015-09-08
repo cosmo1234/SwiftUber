@@ -21,6 +21,8 @@ class UberPrice: NSObject {
     var duration: Int?
     var distance: Float?
     
+    var ride: UberRide?
+    
     init(json: [String: AnyObject], swiftUber: SwiftUber) {
         self.swiftUber = swiftUber
         if let product_id = json["product_id"] as? String {

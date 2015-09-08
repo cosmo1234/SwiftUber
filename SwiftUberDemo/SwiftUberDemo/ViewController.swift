@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate {
     
     @IBOutlet weak var mapView: MKMapView?
     @IBOutlet weak var tableView: UITableView?
@@ -21,6 +21,10 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     var searchingForLocations = false
     
     let cellHeight:CGFloat = 40
+    
+    let swiftUber = SwiftUber(serverToken: "gS4stVsPMm9dThCPpXWBdhDzEhPkMb0BcruNbelO")
+    let swiftUberClientId = "DCyBiqd7ngKYw7Pw4AlnSgw9JPqLIKGy"
+    var prices:[UberPrice] = []
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
@@ -151,6 +155,48 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     // UBER Logic
     
     func launchUberOptions(mapItem: MKMapItem) {
+        if let location = LocationManager.sharedInstance.currentLocation as CLLocation? {
+            let ride = UberRide(pickupLocation: location)
+            ride.dropOffLocation = mapItem.placemark.location
+            
+            // REPLACE WITH YOUR OWN SERVER TOKEN
+            self.swiftUber.priceEstimate(ride, completion: {
+                (uberPrices: [UberPrice]?, error: NSError?) -> Void in
+                if let prices = uberPrices as [UberPrice]? {
+                    self.prices = prices
+                    self.displayUberActionSheet(prices)
+                }
+            })
+        
+        }
+    }
+    
+    func displayUberActionSheet(uberPrices: [UberPrice]) {
+        if uberPrices.count > 0 {
+            var sheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil)
+            
+            for price in uberPrices {
+                if let name = price.displayName as String? {
+                    if let estimate = price.estimate as String? {
+                        let string = name + " - " + estimate
+                        sheet.addButtonWithTitle(string)
+                    }
+                }
+            }
+            
+            sheet.showInView(self.view)
+        }
+    }
+    
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        println("buttonIndex: \(buttonIndex)")
+        
+        let price = self.prices[buttonIndex - 1]
+        if let ride = price.ride as UberRide? {
+            self.swiftUber.openUber(ride, clientId: swiftUberClientId)
+
+        }
+        
         
     }
     
