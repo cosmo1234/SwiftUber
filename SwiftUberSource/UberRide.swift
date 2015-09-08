@@ -24,6 +24,8 @@ class UberRide: NSObject {
             if let product = value as UberProduct? {
                 _uberProduct = product
                 productId = product.id
+            } else {
+                _uberProduct = nil
             }
         }
     }
@@ -49,6 +51,8 @@ class UberRide: NSObject {
                 dropOffLatitude = Float(location.coordinate.latitude)
                 dropOffLongitude = Float(location.coordinate.longitude)
                 _dropOffLocation = location
+            } else {
+                _dropOffLocation = nil
             }
         }
     }
