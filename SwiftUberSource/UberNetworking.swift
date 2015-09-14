@@ -45,10 +45,10 @@ class UberNetworking: NSObject {
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {
             (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
-            println("response \(response)")
+            print("response \(response)")
             var success = false
             if let responseData = data as NSData? {
-                if let json = NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions.MutableContainers, error: nil) as? [String: AnyObject] {
+                if let json = (try? NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions.MutableContainers)) as? [String: AnyObject] {
                     
                     if let products = json["products"] as? [[String: AnyObject]] {
                         success = true
@@ -85,17 +85,17 @@ class UberNetworking: NSObject {
                 
                 NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {
                     (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
-                    println("response \(response)")
+                    print("response \(response)")
                     
                     var uberPrices:[UberPrice] = []
                     
                     if let responseData = data as NSData? {
-                        if let json = NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions.MutableContainers, error: nil) as? [String: AnyObject] {
+                        if let json = (try? NSJSONSerialization.JSONObjectWithData(responseData, options: NSJSONReadingOptions.MutableContainers)) as? [String: AnyObject] {
                             
                             if let prices = json["prices"] as? [[String: AnyObject]] {
                                 
                                 for price in prices {
-                                    if let id = price["product_id"] as? String {
+                                    if let _ = price["product_id"] as? String {
                                         let uberPrice = UberPrice(json: price, swiftUber: self.swiftUber)
                                         uberPrice.attachToUberProduct()
                                         uberPrice.ride = ride

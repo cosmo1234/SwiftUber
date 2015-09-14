@@ -22,14 +22,14 @@ class LocalSearchManager {
             (response: MKLocalSearchResponse?, error: NSError?) -> Void in
             var mapItems:[MKMapItem] = []
             if error != nil {
-                print("Local Search Error: \(error)")
+                print("Local Search Error: \(error)", terminator: "")
                 return
             }
             
-            if let result = response?.mapItems as? [MKMapItem] {
-                mapItems = result
+            if let result = response as MKLocalSearchResponse? {
+                mapItems =  result.mapItems
             }
-            
+
             completion?(mapItems, error)
         })
 

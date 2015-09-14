@@ -13,7 +13,7 @@ class UberProduct: NSObject {
     var displayName:String?
     var productDescription: String?
     var capacity: Int?
-    var priceDetails: PriceDetails?
+    var priceDetails: PriceDetail?
     var imageURL: String?
     
     // Uber
@@ -21,6 +21,7 @@ class UberProduct: NSObject {
     var uberTime: UberTime?
     
     init(productId: String) {
+        super.init()
         self.id = productId
     }
     
@@ -55,7 +56,7 @@ class UberProduct: NSObject {
         } else if let capacity = json["capacity"] as? Float {
             self.capacity = Int(capacity)
         } else if let capacity = json["capacity"] as? String {
-            self.capacity = capacity.toInt()
+            self.capacity = Int(capacity)
         }
         
         if let description = json["description"] as? String {
@@ -63,14 +64,14 @@ class UberProduct: NSObject {
         }
         
         if let price_details = json["price_details"] as? [String: AnyObject] {
-            self.priceDetails = PriceDetails(json: price_details)
+            self.priceDetails = PriceDetail(json: price_details)
         }
         
         if let image = json["image"] as? String {
             self.imageURL = image
         }
         
-        if let displayName = json["displayName"] as? String {
+        if let displayName = json["display_name"] as? String {
             self.displayName = displayName
         }
         
@@ -80,7 +81,7 @@ class UberProduct: NSObject {
     
 }
 
-class PriceDetails: NSObject {
+class PriceDetail: NSObject {
     var distanceUnit: String?
     var costPerMinute: Float?
     var serviceFees: [ServiceFee] = []
@@ -91,6 +92,7 @@ class PriceDetails: NSObject {
     var currencyCode: String?
     
     init(json: [String: AnyObject]) {
+        super.init()
         
         if let distance_unit = json["distance_unit"] as? String {
             self.distanceUnit = distance_unit
@@ -159,6 +161,7 @@ class ServiceFee: NSObject {
     var name: String?
     
     init(json: [String: AnyObject]) {
+        super.init()
         if let fee = json["fee"] as? Float {
             self.fee = fee
         } else if let fee = json["fee"] as? NSNumber {

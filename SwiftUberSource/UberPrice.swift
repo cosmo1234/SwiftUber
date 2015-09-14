@@ -71,7 +71,7 @@ class UberPrice: NSObject {
                 product.uberPrice = self
             } else {
                 // create product
-                var product = UberProduct(productId: productId)
+                let product = UberProduct(productId: productId)
                 product.displayName = self.displayName
                 product.uberPrice = self
                 self.swiftUber.products.append(product)

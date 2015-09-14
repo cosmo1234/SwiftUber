@@ -22,9 +22,12 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     
     let cellHeight:CGFloat = 40
     
+    // REPLACE WITH YOUR OWN SERVER TOKEN & ClIENT ID
+    var ride: UberRide?
     let swiftUber = SwiftUber(serverToken: "gS4stVsPMm9dThCPpXWBdhDzEhPkMb0BcruNbelO")
     let swiftUberClientId = "DCyBiqd7ngKYw7Pw4AlnSgw9JPqLIKGy"
     var prices:[UberPrice] = []
+    var products: [UberProduct] = []
     
     // Search Result
     var searchText = ""
@@ -90,12 +93,12 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     }
     
     func delayedSearch() {
-        println("search text = \(searchText) | textField: \(self.textField?.text)")
+        print("search text = \(searchText) | textField: \(self.textField?.text)")
         
         if searchText == self.textField?.text {
             LocalSearchManager.search(searchText, region: self.mapView?.region, completion: {
                 (mapItems: [MKMapItem], error: NSError?) -> Void in
-                println("search results: \(mapItems)")
+                print("search results: \(mapItems)")
                 self.searchResults = mapItems
                 self.searchingForLocations = false
                 self.tableView?.hidden = false
@@ -106,8 +109,6 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     }
     
     func setTableViewHeight() {
-        var height = 0
-        
         
         UITableView.animateWithDuration(0.23, animations: {
             self.tableViewHeight?.constant = CGFloat(self.searchResults.count) * self.cellHeight
@@ -170,24 +171,42 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     
     func launchUberOptions(mapItem: MKMapItem) {
         if let location = LocationManager.sharedInstance.currentLocation as CLLocation? {
-            let ride = UberRide(pickupLocation: location)
-            ride.dropOffLocation = mapItem.placemark.location
+            self.ride = UberRide(pickupLocation: location)
+            self.ride?.dropOffLocation = mapItem.placemark.location
             
-            // REPLACE WITH YOUR OWN SERVER TOKEN
-            self.swiftUber.priceEstimate(ride, completion: {
-                (uberPrices: [UberPrice]?, error: NSError?) -> Void in
-                if let prices = uberPrices as [UberPrice]? {
-                    self.prices = prices
-                    self.displayUberActionSheet(prices)
-                }
+            self.swiftUber.allProducts(location, completion: {
+                (uberProducts: [UberProduct], error: NSError?) -> Void in
+                self.products = uberProducts
+                self.displayUberProductActionSheet(uberProducts)
+                
             })
+            
+//            self.swiftUber.priceEstimate(ride, completion: {
+//                (uberPrices: [UberPrice]?, error: NSError?) -> Void in
+//                if let prices = uberPrices as [UberPrice]? {
+//                    self.prices = prices
+//                    self.displayUberPriceActionSheet(prices)
+//                }
+//            })
         
         }
     }
     
-    func displayUberActionSheet(uberPrices: [UberPrice]) {
+    func displayUberProductActionSheet(uberProducts: [UberProduct]) {
+        if uberProducts.count > 0 {
+            let sheet = UIActionSheet(title: "Uber Products", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil)
+            for product in uberProducts {
+                if let name = product.displayName as String? {
+                    sheet.addButtonWithTitle(name)
+                }
+            }
+            sheet.showInView(self.view)
+        }
+    }
+    
+    func displayUberPriceActionSheet(uberPrices: [UberPrice]) {
         if uberPrices.count > 0 {
-            var sheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil)
+            let sheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil)
             
             for price in uberPrices {
                 if let name = price.displayName as String? {
@@ -203,15 +222,19 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     }
     
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-        println("buttonIndex: \(buttonIndex)")
-        
         if buttonIndex > 0 {
-            let price = self.prices[buttonIndex - 1]
-            if let ride = price.ride as UberRide? {
-                ride.uberProduct = price.uberProduct
-                self.swiftUber.openUber(ride, clientId: swiftUberClientId)
-                
-            }
+            let product = self.products[buttonIndex - 1]
+            self.pushToProductViewController(product)
+        }
+    }
+    
+    func pushToProductViewController(product: UberProduct) {
+        if let ride = self.ride as UberRide? {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewControllerWithIdentifier("ProductViewController") as! ProductViewController
+            controller.product = product
+            controller.ride = ride
+            self.navigationController?.pushViewController(controller, animated: true)
         }
     }
     

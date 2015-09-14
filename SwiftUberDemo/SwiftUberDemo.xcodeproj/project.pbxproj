@@ -15,6 +15,13 @@
 		9843E1EC1B9E799900385BBF /* SwiftUberHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9843E1EB1B9E799900385BBF /* SwiftUberHelpers.swift */; };
 		9843E1EF1B9E8ADE00385BBF /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9843E1ED1B9E8ADE00385BBF /* SearchResultTableViewCell.swift */; };
 		9843E1F01B9E8ADE00385BBF /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9843E1EE1B9E8ADE00385BBF /* SearchResultTableViewCell.xib */; };
+		98B69EB81BA61BA200592DC4 /* UIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B69EB71BA61BA200592DC4 /* UIKit+Extensions.swift */; settings = {ASSET_TAGS = (); }; };
+		98B69EBB1BA61E1000592DC4 /* ServiceFeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B69EB91BA61E1000592DC4 /* ServiceFeeTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		98B69EBC1BA61E1000592DC4 /* ServiceFeeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B69EBA1BA61E1000592DC4 /* ServiceFeeTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		98B902AF1BA61366007CC7F8 /* ProductOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B902AD1BA61366007CC7F8 /* ProductOverviewTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		98B902B01BA61366007CC7F8 /* ProductOverviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B902AE1BA61366007CC7F8 /* ProductOverviewTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		98B902B31BA616A6007CC7F8 /* PriceDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B902B11BA616A6007CC7F8 /* PriceDetailsTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		98B902B41BA616A6007CC7F8 /* PriceDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98B902B21BA616A6007CC7F8 /* PriceDetailsTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		98BCA6821B9E4B7D00D66A86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BCA6811B9E4B7D00D66A86 /* AppDelegate.swift */; };
 		98BCA6841B9E4B7D00D66A86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BCA6831B9E4B7D00D66A86 /* ViewController.swift */; };
 		98BCA6871B9E4B7D00D66A86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98BCA6851B9E4B7D00D66A86 /* Main.storyboard */; };
@@ -26,6 +33,7 @@
 		98BCA6B11B9E508C00D66A86 /* UberProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BCA6B01B9E508C00D66A86 /* UberProduct.swift */; };
 		98BCA6B31B9E512200D66A86 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BCA6B21B9E512200D66A86 /* LocationManager.swift */; };
 		98BCA6B51B9E51D100D66A86 /* LocalSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BCA6B41B9E51D100D66A86 /* LocalSearchManager.swift */; };
+		98C959E51B9F16000099D089 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C959E41B9F16000099D089 /* ProductViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +55,13 @@
 		9843E1EB1B9E799900385BBF /* SwiftUberHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftUberHelpers.swift; path = ../SwiftUberSource/SwiftUberHelpers.swift; sourceTree = "<group>"; };
 		9843E1ED1B9E8ADE00385BBF /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResultTableViewCell.swift; path = Cells/SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		9843E1EE1B9E8ADE00385BBF /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchResultTableViewCell.xib; path = Cells/SearchResultTableViewCell.xib; sourceTree = "<group>"; };
+		98B69EB71BA61BA200592DC4 /* UIKit+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIKit+Extensions.swift"; path = "Helpers/UIKit+Extensions.swift"; sourceTree = "<group>"; };
+		98B69EB91BA61E1000592DC4 /* ServiceFeeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceFeeTableViewCell.swift; path = Cells/ServiceFeeTableViewCell.swift; sourceTree = "<group>"; };
+		98B69EBA1BA61E1000592DC4 /* ServiceFeeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ServiceFeeTableViewCell.xib; path = Cells/ServiceFeeTableViewCell.xib; sourceTree = "<group>"; };
+		98B902AD1BA61366007CC7F8 /* ProductOverviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductOverviewTableViewCell.swift; path = Cells/ProductOverviewTableViewCell.swift; sourceTree = "<group>"; };
+		98B902AE1BA61366007CC7F8 /* ProductOverviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProductOverviewTableViewCell.xib; path = Cells/ProductOverviewTableViewCell.xib; sourceTree = "<group>"; };
+		98B902B11BA616A6007CC7F8 /* PriceDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PriceDetailsTableViewCell.swift; path = Cells/PriceDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		98B902B21BA616A6007CC7F8 /* PriceDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PriceDetailsTableViewCell.xib; path = Cells/PriceDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		98BCA67C1B9E4B7D00D66A86 /* SwiftUberDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUberDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98BCA6801B9E4B7D00D66A86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98BCA6811B9E4B7D00D66A86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +77,7 @@
 		98BCA6B01B9E508C00D66A86 /* UberProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UberProduct.swift; path = ../SwiftUberSource/UberProduct.swift; sourceTree = "<group>"; };
 		98BCA6B21B9E512200D66A86 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = Managers/LocationManager.swift; sourceTree = "<group>"; };
 		98BCA6B41B9E51D100D66A86 /* LocalSearchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalSearchManager.swift; path = Managers/LocalSearchManager.swift; sourceTree = "<group>"; };
+		98C959E41B9F16000099D089 /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductViewController.swift; path = ViewControllers/ProductViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +111,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		98B69EB61BA61B8200592DC4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				98B69EB71BA61BA200592DC4 /* UIKit+Extensions.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		98BCA6731B9E4B7D00D66A86 = {
 			isa = PBXGroup;
 			children = (
@@ -118,10 +142,11 @@
 		98BCA67E1B9E4B7D00D66A86 /* SwiftUberDemo */ = {
 			isa = PBXGroup;
 			children = (
+				98B69EB61BA61B8200592DC4 /* Helpers */,
+				98C959E31B9F15D00099D089 /* ViewControllers */,
 				98BCA6AA1B9E4C5400D66A86 /* Cells */,
 				98BCA6A91B9E4C4B00D66A86 /* Managers */,
 				98BCA6811B9E4B7D00D66A86 /* AppDelegate.swift */,
-				98BCA6831B9E4B7D00D66A86 /* ViewController.swift */,
 				98BCA6851B9E4B7D00D66A86 /* Main.storyboard */,
 				98BCA6881B9E4B7D00D66A86 /* Images.xcassets */,
 				98BCA68A1B9E4B7D00D66A86 /* LaunchScreen.xib */,
@@ -169,6 +194,12 @@
 			children = (
 				9843E1ED1B9E8ADE00385BBF /* SearchResultTableViewCell.swift */,
 				9843E1EE1B9E8ADE00385BBF /* SearchResultTableViewCell.xib */,
+				98B902AD1BA61366007CC7F8 /* ProductOverviewTableViewCell.swift */,
+				98B902AE1BA61366007CC7F8 /* ProductOverviewTableViewCell.xib */,
+				98B902B11BA616A6007CC7F8 /* PriceDetailsTableViewCell.swift */,
+				98B902B21BA616A6007CC7F8 /* PriceDetailsTableViewCell.xib */,
+				98B69EB91BA61E1000592DC4 /* ServiceFeeTableViewCell.swift */,
+				98B69EBA1BA61E1000592DC4 /* ServiceFeeTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -182,6 +213,15 @@
 				9843E1EB1B9E799900385BBF /* SwiftUberHelpers.swift */,
 			);
 			name = SwiftUber;
+			sourceTree = "<group>";
+		};
+		98C959E31B9F15D00099D089 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				98BCA6831B9E4B7D00D66A86 /* ViewController.swift */,
+				98C959E41B9F16000099D089 /* ProductViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,7 +268,9 @@
 		98BCA6741B9E4B7D00D66A86 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Sean Wilson";
 				TargetAttributes = {
 					98BCA67B1B9E4B7D00D66A86 = {
@@ -270,9 +312,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98B902B41BA616A6007CC7F8 /* PriceDetailsTableViewCell.xib in Resources */,
 				98BCA6871B9E4B7D00D66A86 /* Main.storyboard in Resources */,
 				98BCA68C1B9E4B7D00D66A86 /* LaunchScreen.xib in Resources */,
+				98B69EBC1BA61E1000592DC4 /* ServiceFeeTableViewCell.xib in Resources */,
 				9843E1F01B9E8ADE00385BBF /* SearchResultTableViewCell.xib in Resources */,
+				98B902B01BA61366007CC7F8 /* ProductOverviewTableViewCell.xib in Resources */,
 				98BCA6891B9E4B7D00D66A86 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,19 +336,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98B902AF1BA61366007CC7F8 /* ProductOverviewTableViewCell.swift in Sources */,
 				9843E1EC1B9E799900385BBF /* SwiftUberHelpers.swift in Sources */,
 				98BCA6B51B9E51D100D66A86 /* LocalSearchManager.swift in Sources */,
 				9843E1E51B9E729F00385BBF /* UberPromotion.swift in Sources */,
 				9843E1E31B9E711E00385BBF /* UberTime.swift in Sources */,
 				9843E1E81B9E73DA00385BBF /* UberNetworking.swift in Sources */,
+				98B902B31BA616A6007CC7F8 /* PriceDetailsTableViewCell.swift in Sources */,
 				98BCA6841B9E4B7D00D66A86 /* ViewController.swift in Sources */,
+				98B69EBB1BA61E1000592DC4 /* ServiceFeeTableViewCell.swift in Sources */,
 				9843E1E11B9E5C3C00385BBF /* UberPrice.swift in Sources */,
 				98BCA6B31B9E512200D66A86 /* LocationManager.swift in Sources */,
 				98BCA6AF1B9E4DBD00D66A86 /* SwiftUber.swift in Sources */,
 				98BCA6821B9E4B7D00D66A86 /* AppDelegate.swift in Sources */,
+				98C959E51B9F16000099D089 /* ProductViewController.swift in Sources */,
 				98BCA6B11B9E508C00D66A86 /* UberProduct.swift in Sources */,
 				9843E1EF1B9E8ADE00385BBF /* SearchResultTableViewCell.swift in Sources */,
 				9843E1EA1B9E751B00385BBF /* UberRide.swift in Sources */,
+				98B69EB81BA61BA200592DC4 /* UIKit+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +416,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -436,6 +487,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SwiftUberDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seanwilson.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -447,6 +499,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SwiftUberDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seanwilson.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -465,6 +518,7 @@
 				);
 				INFOPLIST_FILE = SwiftUberDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seanwilson.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftUberDemo.app/SwiftUberDemo";
 			};
@@ -480,6 +534,7 @@
 				);
 				INFOPLIST_FILE = SwiftUberDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.seanwilson.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftUberDemo.app/SwiftUberDemo";
 			};

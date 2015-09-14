@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PriceDetailsTableViewCell" rowHeight="130" id="KGk-i7-Jjw" customClass="PriceDetailsTableViewCell" customModule="SwiftUberDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="distance unit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gn1-8c-ZCn">
+                        <rect key="frame" x="8" y="8" width="78" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="currenct code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKW-7U-tsl">
+                        <rect key="frame" x="8" y="24" width="85" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="base" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TH7-el-ID5">
+                        <rect key="frame" x="8" y="40" width="30" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cost per distance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOW-vq-7am">
+                        <rect key="frame" x="8" y="56" width="105" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cost per minute" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9x-pG-6tX">
+                        <rect key="frame" x="8" y="72" width="95" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cancelation fee" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfC-wS-4DM">
+                        <rect key="frame" x="8" y="88" width="93" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="minimum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGB-2O-tcj">
+                        <rect key="frame" x="8" y="104" width="55" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="leadingMargin" secondItem="Gn1-8c-ZCn" secondAttribute="leading" id="41F-0m-Jxr"/>
+                    <constraint firstItem="TH7-el-ID5" firstAttribute="top" secondItem="VKW-7U-tsl" secondAttribute="bottom" id="5bU-SI-bn0"/>
+                    <constraint firstItem="MGB-2O-tcj" firstAttribute="leading" secondItem="VfC-wS-4DM" secondAttribute="leading" id="9j1-T8-a9y"/>
+                    <constraint firstItem="TH7-el-ID5" firstAttribute="leading" secondItem="VKW-7U-tsl" secondAttribute="leading" id="KTG-GK-add"/>
+                    <constraint firstItem="VfC-wS-4DM" firstAttribute="top" secondItem="T9x-pG-6tX" secondAttribute="bottom" id="XwQ-a9-prw"/>
+                    <constraint firstItem="T9x-pG-6tX" firstAttribute="top" secondItem="dOW-vq-7am" secondAttribute="bottom" id="a8U-Yq-X9F"/>
+                    <constraint firstItem="MGB-2O-tcj" firstAttribute="top" secondItem="VfC-wS-4DM" secondAttribute="bottom" id="bqj-oq-hTJ"/>
+                    <constraint firstItem="VKW-7U-tsl" firstAttribute="leading" secondItem="Gn1-8c-ZCn" secondAttribute="leading" id="jeK-rp-C7h"/>
+                    <constraint firstItem="dOW-vq-7am" firstAttribute="top" secondItem="TH7-el-ID5" secondAttribute="bottom" id="od6-26-ZI9"/>
+                    <constraint firstItem="dOW-vq-7am" firstAttribute="leading" secondItem="TH7-el-ID5" secondAttribute="leading" id="pW6-Nf-2KK"/>
+                    <constraint firstItem="VfC-wS-4DM" firstAttribute="leading" secondItem="T9x-pG-6tX" secondAttribute="leading" id="qiY-lN-n8t"/>
+                    <constraint firstItem="T9x-pG-6tX" firstAttribute="leading" secondItem="dOW-vq-7am" secondAttribute="leading" id="uUy-nW-071"/>
+                    <constraint firstAttribute="topMargin" secondItem="Gn1-8c-ZCn" secondAttribute="top" id="z8c-sz-qkT"/>
+                    <constraint firstItem="VKW-7U-tsl" firstAttribute="top" secondItem="Gn1-8c-ZCn" secondAttribute="bottom" id="zJM-Kj-QXd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="base" destination="TH7-el-ID5" id="BsU-fv-A6X"/>
+                <outlet property="cancellationFee" destination="VfC-wS-4DM" id="9EF-hB-JrQ"/>
+                <outlet property="costPerDistance" destination="dOW-vq-7am" id="WOb-sG-me6"/>
+                <outlet property="costPerMinute" destination="T9x-pG-6tX" id="suo-cW-qt0"/>
+                <outlet property="currenceCode" destination="VKW-7U-tsl" id="CB7-4d-wch"/>
+                <outlet property="distanceUnit" destination="Gn1-8c-ZCn" id="Zot-tq-mpG"/>
+                <outlet property="minimum" destination="MGB-2O-tcj" id="bSN-gW-CVs"/>
+            </connections>
+            <point key="canvasLocation" x="304" y="364"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -66,13 +66,13 @@ class UberRide: NSObject {
     func setDestinationAddress(address: String, completion:((Bool)-> Void)?) {
         self.dropOffAddress = address
         
-        var geocoder = CLGeocoder()
+        let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address, completionHandler: {
-            (placemarks: [AnyObject]?, error: NSError?) -> Void in
+            (placemarks: [CLPlacemark]?, error: NSError?) -> Void in
             var success = false
             var location:CLLocation?
             
-            if let pmarks = placemarks as? [CLPlacemark] {
+            if let pmarks = placemarks as [CLPlacemark]? {
                 if let placemark = pmarks[0] as CLPlacemark? {
                     location = placemark.location
                     self.dropOffLocation = location
