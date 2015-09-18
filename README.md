@@ -29,7 +29,7 @@ Create Ride
 let ride = UberRide(pickupLocation: CLLocation)
 ride.dropOffLocation = destination
 ride.nickName = destinationName
-ride.setDestinationAddress(address: YourPlacesFullAddress, completion: nil)
+ride.setDestinationAddress(address: "Destination's Full Address", completion: nil)
 ```
 Get Uber Price Estimates
 ```
