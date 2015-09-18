@@ -15,10 +15,10 @@ At the center of this is the UberRide. This object stores where the user is and 
 ```
 let ride = UberRide(pickupLocation: CLLocation)
 ride.dropOffLocation = destination
-ride.nickName = destinationName
+ride.setDestinationAddress(address: "Destination's Full Address", completion: nil)
 ```
 
-Use Case: Give user Uber Price estimates & open Uber
+###Use Case: Give user price estimates & open Uber
 
 Initialize UberSwift
 ```
@@ -28,7 +28,6 @@ Create Ride
 ```
 let ride = UberRide(pickupLocation: CLLocation)
 ride.dropOffLocation = destination
-ride.nickName = destinationName
 ride.setDestinationAddress(address: "Destination's Full Address", completion: nil)
 ```
 Get Uber Price Estimates
@@ -48,9 +47,9 @@ Open up In App
 ```
 swiftUber.openUber(ride: ride, clientId: "yourClientId")
 ```
-// This will try to open in Uber app first. If app is not on phone, it will open up safari.
+This will try to open in Uber app first. If app is not on phone, it will open up safari.
 
-Current Functions:
+###Current Functions:
  - allProducts(location: CLLocation, completion: (([UberProduct], NSError?) -> Void)?) 
  	- Returns a list of all available uber products in a region
  - priceEstimate(ride: UberRide, completion: (([UberProduct], NSError?) -> Void)?)
