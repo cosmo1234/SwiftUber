@@ -63,7 +63,7 @@ class UberRide: NSObject {
         pickupLongitude = Float(pickupLocation.coordinate.longitude)
     }
     
-    func setDestinationAddress(address: String, completion:((Bool)-> Void)?) {
+    func setDestinationAddress(address address: String, completion:((Bool)-> Void)?) {
         self.dropOffAddress = address
         
         let geocoder = CLGeocoder()

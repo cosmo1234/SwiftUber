@@ -27,8 +27,14 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view.
         
         self.swiftUber.priceEstimate(self.ride, completion: {
-            (uberPrices: [UberPrice]?, error: NSError?) -> Void in
+            (products: [UberProduct], error: NSError?) -> Void in
             self.tableView?.reloadData()
+            for product in products {
+                // name: product.displayName (String?)
+                // priceEstimate: product.uberPrice?.estimate (String?)
+                print("product Name: \(product.displayName) | price Estimate: \(product.uberPrice?.estimate)")
+            }
+            
         })
         
         self.openUberButton?.setTitle("Open Uber", forState: UIControlState.Normal)

@@ -174,7 +174,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
             self.ride = UberRide(pickupLocation: location)
             self.ride?.dropOffLocation = mapItem.placemark.location
             if let title = mapItem.placemark.title as String? {
-                self.ride?.setDestinationAddress(title, completion: nil)
+                self.ride?.setDestinationAddress(address: title, completion: nil)
             }
             
             

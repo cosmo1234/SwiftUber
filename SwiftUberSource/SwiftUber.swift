@@ -31,11 +31,11 @@ class SwiftUber: NSObject {
         //
     }
     
-    func priceEstimate(ride: UberRide, completion: (([UberPrice]?, NSError?) -> Void)?){
+    func priceEstimate(ride: UberRide, completion: (([UberProduct], NSError?) -> Void)?){
         let uberNetworking = UberNetworking(serverToken: self.serverToken, swiftUber: self)
         uberNetworking.getPriceEstimates(ride, completion: {
             (uberPrices: [UberPrice]?, error: NSError?) -> Void in
-            completion?(uberPrices, error)
+            completion?(self.products, error)
         })
     }
     
