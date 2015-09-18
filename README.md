@@ -41,7 +41,9 @@ swiftUber.priceEstimate(ride: ride, completion {
 })
 ```
 User Picks Uber Price (UberProduct is already attached)
-ride.uberProduct = price.uberProduct
+```
+ride.uberProduct = product // Selected UberProduct
+```
 
 Open up In App
 ```
