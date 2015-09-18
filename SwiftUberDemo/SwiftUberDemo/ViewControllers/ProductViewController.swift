@@ -10,10 +10,14 @@ import UIKit
 
 class ProductViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var swiftUber: SwiftUber!
     var product:UberProduct!
     var ride: UberRide!
+    // Replace with your own!! 
+    let swiftUberClientId = "DCyBiqd7ngKYw7Pw4AlnSgw9JPqLIKGy"
     
     @IBOutlet weak var tableView: UITableView?
+    @IBOutlet weak var openUberButton: UIButton?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +25,14 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.setUpTableView()
 
         // Do any additional setup after loading the view.
+        
+        self.swiftUber.priceEstimate(self.ride, completion: {
+            (uberPrices: [UberPrice]?, error: NSError?) -> Void in
+            self.tableView?.reloadData()
+        })
+        
+        self.openUberButton?.setTitle("Open Uber", forState: UIControlState.Normal)
+
     }
     
     func setUpTableView() {
@@ -103,14 +115,10 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK : Open Uber
+    @IBAction func openUber() {
+        self.ride.uberProduct = self.product
+        self.swiftUber.openUber(self.ride, clientId: swiftUberClientId)
     }
-    */
 
 }

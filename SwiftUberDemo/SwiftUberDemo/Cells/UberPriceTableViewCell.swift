@@ -31,7 +31,7 @@ class UberPriceTableViewCell: UITableViewCell {
                 _uberRidePrice = price
                 
                 if let priceEstimate = price.estimate as String? {
-                    estimate?.text = " Estimate: " + priceEstimate
+                    estimate?.text = "Estimate: " + priceEstimate
                 }
                 
                 if let priceLowEstimate = price.lowEstimate as Int? {

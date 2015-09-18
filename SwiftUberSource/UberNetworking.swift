@@ -152,6 +152,8 @@ class UberNetworking: NSObject {
             urlString += "&dropoff[formatted_address]=" + formattedAddress
         }
         
+        print("Uber url: \(urlString)")
+        
         return NSURL(string: urlString.swiftUberURLformat())
     }
     

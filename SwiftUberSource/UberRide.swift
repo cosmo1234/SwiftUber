@@ -23,7 +23,7 @@ class UberRide: NSObject {
         set (value) {
             if let product = value as UberProduct? {
                 _uberProduct = product
-                productId = product.id
+                self.productId = product.id
             } else {
                 _uberProduct = nil
             }

@@ -173,6 +173,10 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         if let location = LocationManager.sharedInstance.currentLocation as CLLocation? {
             self.ride = UberRide(pickupLocation: location)
             self.ride?.dropOffLocation = mapItem.placemark.location
+            if let title = mapItem.placemark.title as String? {
+                self.ride?.setDestinationAddress(title, completion: nil)
+            }
+            
             
             self.swiftUber.allProducts(location, completion: {
                 (uberProducts: [UberProduct], error: NSError?) -> Void in
@@ -180,14 +184,6 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
                 self.displayUberProductActionSheet(uberProducts)
                 
             })
-            
-//            self.swiftUber.priceEstimate(ride, completion: {
-//                (uberPrices: [UberPrice]?, error: NSError?) -> Void in
-//                if let prices = uberPrices as [UberPrice]? {
-//                    self.prices = prices
-//                    self.displayUberPriceActionSheet(prices)
-//                }
-//            })
         
         }
     }
@@ -200,23 +196,6 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
                     sheet.addButtonWithTitle(name)
                 }
             }
-            sheet.showInView(self.view)
-        }
-    }
-    
-    func displayUberPriceActionSheet(uberPrices: [UberPrice]) {
-        if uberPrices.count > 0 {
-            let sheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil)
-            
-            for price in uberPrices {
-                if let name = price.displayName as String? {
-                    if let estimate = price.estimate as String? {
-                        let string = name + " - " + estimate
-                        sheet.addButtonWithTitle(string)
-                    }
-                }
-            }
-            
             sheet.showInView(self.view)
         }
     }
@@ -234,6 +213,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
             let controller = storyboard.instantiateViewControllerWithIdentifier("ProductViewController") as! ProductViewController
             controller.product = product
             controller.ride = ride
+            controller.swiftUber = self.swiftUber
             self.navigationController?.pushViewController(controller, animated: true)
         }
     }

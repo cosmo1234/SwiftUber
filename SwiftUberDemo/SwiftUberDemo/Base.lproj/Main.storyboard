@@ -73,19 +73,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oLN-yJ-cGx">
-                                <rect key="frame" x="20" y="20" width="560" height="580"/>
+                                <rect key="frame" x="20" y="20" width="560" height="530"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HNW-lt-Ngu">
+                                <rect key="frame" x="20" y="550" width="560" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="32C-IX-84W"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="openUber" destination="YdP-zr-4m7" eventType="touchUpInside" id="Fzs-pB-qJj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="oLN-yJ-cGx" firstAttribute="leading" secondItem="zW2-5d-1cG" secondAttribute="leadingMargin" id="7v0-bO-vZV"/>
+                            <constraint firstItem="oLN-yJ-cGx" firstAttribute="top" secondItem="HNW-lt-Ngu" secondAttribute="top" id="D8b-dt-t0u"/>
+                            <constraint firstItem="oLN-yJ-cGx" firstAttribute="bottom" secondItem="HNW-lt-Ngu" secondAttribute="bottom" id="NZV-xM-qq2"/>
+                            <constraint firstItem="HNW-lt-Ngu" firstAttribute="top" secondItem="oLN-yJ-cGx" secondAttribute="bottom" id="PDn-Lh-Xaf"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="HNW-lt-Ngu" secondAttribute="leading" id="UGd-dq-sxW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oLN-yJ-cGx" secondAttribute="trailing" id="Y43-A0-Hsj"/>
                             <constraint firstItem="oLN-yJ-cGx" firstAttribute="top" secondItem="cio-dB-poN" secondAttribute="bottom" id="nZR-Gi-0If"/>
+                            <constraint firstItem="WBC-s1-0PW" firstAttribute="top" secondItem="HNW-lt-Ngu" secondAttribute="bottom" id="qYL-5O-6og"/>
                             <constraint firstItem="WBC-s1-0PW" firstAttribute="top" secondItem="oLN-yJ-cGx" secondAttribute="bottom" id="tSx-ER-Nir"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HNW-lt-Ngu" secondAttribute="trailing" id="vmy-pg-Nf8"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="D8b-dt-t0u"/>
+                                <exclude reference="NZV-xM-qq2"/>
+                                <exclude reference="tSx-ER-Nir"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="openUberButton" destination="HNW-lt-Ngu" id="IFP-b5-zn5"/>
                         <outlet property="tableView" destination="oLN-yJ-cGx" id="U0C-tt-q9s"/>
                     </connections>
                 </viewController>
