@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UberPriceTableViewCell" rowHeight="110" id="KGk-i7-Jjw" customClass="UberPriceTableViewCell" customModule="SwiftUberDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7K-cA-2nk">
+                        <rect key="frame" x="8" y="8" width="53" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Low Estimate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLm-OX-IP7">
+                        <rect key="frame" x="8" y="24" width="81" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Estimate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvt-hG-bA8">
+                        <rect key="frame" x="8" y="40" width="85" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Surge Multiplier" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hc1-XC-9sO">
+                        <rect key="frame" x="8" y="56" width="96" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nth-dV-TPo">
+                        <rect key="frame" x="8" y="72" width="52" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pk7-TS-nzO">
+                        <rect key="frame" x="8" y="88" width="53" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Nth-dV-TPo" firstAttribute="leading" secondItem="Hc1-XC-9sO" secondAttribute="leading" id="6O0-XE-uV6"/>
+                    <constraint firstItem="Nth-dV-TPo" firstAttribute="top" secondItem="Hc1-XC-9sO" secondAttribute="bottom" id="6qe-gQ-P6v"/>
+                    <constraint firstItem="tLm-OX-IP7" firstAttribute="leading" secondItem="g7K-cA-2nk" secondAttribute="leading" id="6rg-m2-5H4"/>
+                    <constraint firstItem="Hc1-XC-9sO" firstAttribute="top" secondItem="cvt-hG-bA8" secondAttribute="bottom" id="D6W-Q2-P8f"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="g7K-cA-2nk" secondAttribute="leading" id="GXR-oL-xsf"/>
+                    <constraint firstItem="Hc1-XC-9sO" firstAttribute="leading" secondItem="g7K-cA-2nk" secondAttribute="leading" id="IwV-su-knJ"/>
+                    <constraint firstAttribute="topMargin" secondItem="g7K-cA-2nk" secondAttribute="top" id="OkI-Fi-DMO"/>
+                    <constraint firstItem="pk7-TS-nzO" firstAttribute="top" secondItem="Nth-dV-TPo" secondAttribute="bottom" id="UeT-WJ-DnY"/>
+                    <constraint firstItem="cvt-hG-bA8" firstAttribute="leading" secondItem="g7K-cA-2nk" secondAttribute="leading" id="VAr-Ud-fZW"/>
+                    <constraint firstItem="pk7-TS-nzO" firstAttribute="leading" secondItem="Nth-dV-TPo" secondAttribute="leading" id="gze-Em-YbG"/>
+                    <constraint firstItem="tLm-OX-IP7" firstAttribute="top" secondItem="g7K-cA-2nk" secondAttribute="bottom" id="s5Y-Zj-K0m"/>
+                    <constraint firstItem="cvt-hG-bA8" firstAttribute="top" secondItem="tLm-OX-IP7" secondAttribute="bottom" id="tVL-6H-PVU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="distance" destination="pk7-TS-nzO" id="Mhl-hI-QH0"/>
+                <outlet property="duration" destination="Nth-dV-TPo" id="15q-B4-Hbm"/>
+                <outlet property="estimate" destination="g7K-cA-2nk" id="2RD-2w-RRn"/>
+                <outlet property="highEstimate" destination="cvt-hG-bA8" id="tSc-hL-nax"/>
+                <outlet property="lowEstimate" destination="tLm-OX-IP7" id="QDC-NI-PXy"/>
+            </connections>
+            <point key="canvasLocation" x="246" y="297"/>
+        </tableViewCell>
+    </objects>
+</document>

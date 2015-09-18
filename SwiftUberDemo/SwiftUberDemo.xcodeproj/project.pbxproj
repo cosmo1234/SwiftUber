@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		980285FE1BACC1BF00522946 /* UberPriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980285FC1BACC1BF00522946 /* UberPriceTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		980285FF1BACC1BF00522946 /* UberPriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 980285FD1BACC1BF00522946 /* UberPriceTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		9843E1E11B9E5C3C00385BBF /* UberPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9843E1E01B9E5C3C00385BBF /* UberPrice.swift */; };
 		9843E1E31B9E711E00385BBF /* UberTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9843E1E21B9E711E00385BBF /* UberTime.swift */; };
 		9843E1E51B9E729F00385BBF /* UberPromotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9843E1E41B9E729F00385BBF /* UberPromotion.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		980285FC1BACC1BF00522946 /* UberPriceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UberPriceTableViewCell.swift; path = Cells/UberPriceTableViewCell.swift; sourceTree = "<group>"; };
+		980285FD1BACC1BF00522946 /* UberPriceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UberPriceTableViewCell.xib; path = Cells/UberPriceTableViewCell.xib; sourceTree = "<group>"; };
 		9843E1E01B9E5C3C00385BBF /* UberPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UberPrice.swift; path = ../SwiftUberSource/UberPrice.swift; sourceTree = "<group>"; };
 		9843E1E21B9E711E00385BBF /* UberTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UberTime.swift; path = ../SwiftUberSource/UberTime.swift; sourceTree = "<group>"; };
 		9843E1E41B9E729F00385BBF /* UberPromotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UberPromotion.swift; path = ../SwiftUberSource/UberPromotion.swift; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 				98B902B21BA616A6007CC7F8 /* PriceDetailsTableViewCell.xib */,
 				98B69EB91BA61E1000592DC4 /* ServiceFeeTableViewCell.swift */,
 				98B69EBA1BA61E1000592DC4 /* ServiceFeeTableViewCell.xib */,
+				980285FC1BACC1BF00522946 /* UberPriceTableViewCell.swift */,
+				980285FD1BACC1BF00522946 /* UberPriceTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 				9843E1F01B9E8ADE00385BBF /* SearchResultTableViewCell.xib in Resources */,
 				98B902B01BA61366007CC7F8 /* ProductOverviewTableViewCell.xib in Resources */,
 				98BCA6891B9E4B7D00D66A86 /* Images.xcassets in Resources */,
+				980285FF1BACC1BF00522946 /* UberPriceTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +358,7 @@
 				98BCA6821B9E4B7D00D66A86 /* AppDelegate.swift in Sources */,
 				98C959E51B9F16000099D089 /* ProductViewController.swift in Sources */,
 				98BCA6B11B9E508C00D66A86 /* UberProduct.swift in Sources */,
+				980285FE1BACC1BF00522946 /* UberPriceTableViewCell.swift in Sources */,
 				9843E1EF1B9E8ADE00385BBF /* SearchResultTableViewCell.swift in Sources */,
 				9843E1EA1B9E751B00385BBF /* UberRide.swift in Sources */,
 				98B69EB81BA61BA200592DC4 /* UIKit+Extensions.swift in Sources */,

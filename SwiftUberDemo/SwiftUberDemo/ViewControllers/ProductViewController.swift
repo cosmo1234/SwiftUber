@@ -31,6 +31,7 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.tableView?.registerNib(UINib(nibName: "ProductOverviewTableViewCell", bundle: nil), forCellReuseIdentifier: "ProductOverviewTableViewCell")
         self.tableView?.registerNib(UINib(nibName: "PriceDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "PriceDetailsTableViewCell")
         self.tableView?.registerNib(UINib(nibName: "ServiceFeeTableViewCell", bundle: nil), forCellReuseIdentifier: "ServiceFeeTableViewCell")
+        self.tableView?.registerNib(UINib(nibName: "UberPriceTableViewCell", bundle: nil), forCellReuseIdentifier: "UberPriceTableViewCell")
         
         self.tableView?.reloadData()
     }
@@ -46,6 +47,11 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let _ = self.product.priceDetails as PriceDetail? {
             count += 1
         }
+        
+        if let _ = self.product.uberPrice as UberPrice? {
+            count += 1
+        }
+        
         print("count: \(count)")
         return count
     }
@@ -58,6 +64,7 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
                 return details.serviceFees.count + 1
             }
             return 0
+        case 2: return 1
         default: return 0
         }
     }
@@ -75,6 +82,10 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
         case (1,_) where indexPath.row > 0 :
             let cell = tableView.dequeueReusableCellWithIdentifier("ServiceFeeTableViewCell", forIndexPath: indexPath) as! ServiceFeeTableViewCell
             cell.serviceFee = self.product.priceDetails?.serviceFees[indexPath.row - 1]
+            return cell
+        case (2,_):
+            let cell = tableView.dequeueReusableCellWithIdentifier("UberPriceTableViewCell", forIndexPath: indexPath) as! UberPriceTableViewCell
+            cell.uberRidePrice = self.product.uberPrice
             return cell
         default:
             let cell = tableView.dequeueReusableCellWithIdentifier("default", forIndexPath: indexPath) as UITableViewCell

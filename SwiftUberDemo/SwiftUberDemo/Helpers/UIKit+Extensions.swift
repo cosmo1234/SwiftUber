@@ -14,4 +14,16 @@ extension Float {
         nf.numberStyle = .CurrencyStyle
         return nf.stringFromNumber(self)!
     }
+    
+}
+
+extension Int {
+    func toCurrency() -> String {
+        return Float(self).toCurrency()
+    }
+    
+    func secondsToMinutes() -> Int {
+        return self / 60
+    }
+    
 }

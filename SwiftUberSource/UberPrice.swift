@@ -65,7 +65,7 @@ class UberPrice: NSObject {
     func attachToUberProduct() {
         if let productId = self.productId as String? {
             let filteredProducts = self.swiftUber.products.filter( { $0.id == productId })
-            if filteredProducts.count == 1 {
+            if filteredProducts.count > 0 {
                 let product = filteredProducts[0]
                 self.uberProduct = product
                 product.uberPrice = self
